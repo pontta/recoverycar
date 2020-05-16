@@ -1,0 +1,11 @@
+var express = require('express');
+var router = express.Router();
+
+/*GET send recovery car's info JSON*/
+router.get('/', function(req,res,next){
+	req.app.locals.counter++;
+	console.log("A GET request for info JSON received, counter: " + req.app.locals.counter);
+	res.send(req.app.locals.infoJSON);
+});
+module.exports = router;
+

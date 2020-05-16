@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    if message
+        div#message 
+            p #{message}
+    div#locator
+        h1 Locator
+    div#content  
+        div#map
+    
+        div#controls
+            button#summon(type='button', onclick='getLocation()') Summon
+    
+            button#dismiss(type='button', onclick='dismiss()') Dismiss
+    
+            button#setHome.smallButton(type='button', onclick='getLocationHome()') set home
+            button#setPits.smallButton(type='button', onclick='getLocationPits()') set pits
+    script
+    
+        include ../bin/setDestination.js
+        include ../bin/dismiss.js
+        include ../bin/setPits.js
+        include ../bin/setHome.js
+        include ../bin/map2.js
+        include ../bin/updateInfo.js

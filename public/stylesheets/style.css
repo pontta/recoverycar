@@ -1,0 +1,210 @@
+:root{
+    --main-font-color: #555;
+    --main-font-color-white:#fff;
+    --main-font-color-dark:#000;
+    --main-button-width: 400px;
+    --main-color:#3936a6;
+    --main-color-dark:#14133c;
+    --main-color-white:#fff;
+}
+
+p, h1, h2, h3, button{
+    color:var(--main-font-color);
+    font-weight:100;
+    padding:0;
+    margin:0;
+}
+body {
+  max-width:1600px;
+  margin:0 auto;
+  background-color:#f9f9f9;
+  display:grid;
+  align-items:center;
+}
+
+div{
+	margin:0;
+	background-color:transparent;
+	float:left;
+	padding:0;
+}
+
+.header{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-items:center;
+    width:100%;
+    margin:0 auto;
+    background-color:var(--main-color-dark);
+}
+
+.header div{
+    display:flex;
+    align-items: center;
+}
+.header div p{
+    color: #fff;
+}
+#locator{
+    width: 100%;
+    margin: 0 0;
+    padding: 0.5em 0;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+}
+#locator h1{
+    color:var(--main-font-color-white);
+}
+
+#content {
+    width:100%;
+    background-color: #ccc;
+    position:static;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+#map{
+    width:100%;
+}
+
+#map div.olMapViewport{
+    width:100vw;
+    height:85vh !important;
+}
+
+#controls{
+   //margin: 1em;
+    
+position: absolute;
+bottom:10px;    
+z-index: 9999;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+}
+
+button{
+    display: block;
+    margin: 10px 10px;
+    background-color: var(--main-color-white);
+    border: none;
+    font-size: 14pt;
+    width: var(--main-button-width);
+    min-height: 120px;
+    border-radius: 3px;
+    box-shadow: #bbb 0 1.4px 2.5px;
+}
+
+button:hover{
+    background-color:var(--main-color);
+    color:var(--main-font-color-white);
+}
+.smallButton{
+    width: calc(0.45*var(--main-button-width));
+    color: var(--main-font-color-white);
+    background-color: var(--main-color-dark);
+    float: left;
+}
+
+
+.QRcodeBox img{
+	margin: 0 auto;
+	min-width:4cm;
+}
+h1{
+	clear:both;
+	font-size:25pt;
+	text-align:center;
+
+}
+
+h2{
+    font-size:20pt;
+    text-align:center;
+}
+p{
+	text-align:center;
+	padding:0 5px;
+}
+
+
+.olLayerDiv div{
+    padding:0px;
+    background-color:transparent;
+}
+
+.olMapViewport{
+    margin:0;
+    padding:0;
+}
+
+#message {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	min-height:3em;
+	background-color: #ddaaaa;
+	padding:1em 0;
+	animation-name:fademessage;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
+	
+	opacity:0;
+}
+
+/* On screens that are 1024px or less, set the background color to blue */
+@media screen and (max-width: 1024px) {
+    body {
+        width:100%;
+    }
+    
+    div{
+        padding:0;
+        width:100%;
+        float:none;
+        margin:0;
+    }
+    
+    .header div{
+        width:45%;
+    }
+
+    button{
+        width:40%;
+        margin:10px auto;
+	font-size:150%;
+	font-weight:300;
+	min-height:unset;
+	padding:1em;
+	
+    }
+
+    .smallButton{
+        width:40%;
+	padding:0.5em;
+    }
+       
+    #controls{
+        margin-bottom:50px;
+    }
+    
+    h1{
+        font-size:40pt;
+    }  
+
+}
+
+
+@keyframes fademessage {
+  0% {opacity: 100;}
+  50% {opacity: 100;}
+  100% {opacity: 0;}
+}
